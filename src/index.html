@@ -1,100 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>TODOList</title>
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TODOList</title>
+  </head>
 
-	<body class="page">
-		<header class="header">
-			<div class="header-container"><a href="#" class="logo">todolist</a></div>
-		</header>
+  <body class="page">
+    <header class="header">
+      <div class="header-container"><a href="#" class="logo">todolist</a></div>
+    </header>
 
-		<div class="container">
-			<form class="form">
-				<input type="text" class="input-search" name="input" />
-				<select class="select select-done" name="done">
-					<option value="all">all</option>
-					<option value="open">open</option>
-					<option value="done">done</option>
-				</select>
-				<select class="select select-priority" name="priority">
-					<option value="all">all</option>
-					<option value="high">high</option>
-					<option value="normal">normal</option>
-					<option value="low">low</option>
-				</select>
-				<button type="button" class="button" data-action="add-note">
-					Create
-				</button>
-			</form>
+    <div class="container">
+      <form class="form">
+        <input
+          type="text"
+          class="input-search"
+          name="input"
+          placeholder="search by title"
+        />
+        <select class="select select-done" name="done">
+          <option value="all">all</option>
+          <option value="open">open</option>
+          <option value="done">done</option>
+        </select>
+        <select class="select select-priority" name="priority">
+          <option value="all">all</option>
+          <option value="high">high</option>
+          <option value="normal">normal</option>
+          <option value="low">low</option>
+        </select>
+        <button type="button" class="button create-btn" data-action="add-note">
+          Create
+        </button>
+      </form>
 
-			<div class="notes-grid"></div>
+      <div class="notes-grid"></div>
 
-			<div class="backdrop">
-				<div class="modal">
-					<form class="modal-form">
-						<p class="modal-title">Title:</p>
-						<input type="text" class="modal-input__title" placeholder="Title" />
-						<p class="modal-title">Description:</p>
-						<textarea
-							class="input"
-							rows="5"
-							placeholder="Description"
-						></textarea>
-						<p class="modal-title">Priority:</p>
-						<select class="modal-select">
-							<option value="high">high</option>
-							<option value="normal">normal</option>
-							<option value="low">low</option>
-						</select>
-						<div class="actions">
-							<button type="submit" class="button" data-action="create-success">
-								Save
-							</button>
-							<button type="button" class="button" data-action="create-cancel">
-								Cancel
-							</button>
-						</div>
-					</form>
-				</div>
-			</div>
+      <div class="backdrop">
+        <div class="modal">
+          <form class="modal-form">
+            <p class="modal-title">Title:</p>
+            <input type="text" class="modal-input__title" placeholder="Title" />
+            <p class="modal-title">Description:</p>
+            <textarea
+              class="input"
+              rows="5"
+              placeholder="Description"
+            ></textarea>
+            <p class="modal-title">Priority:</p>
+            <select class="modal-select">
+              <option value="high">high</option>
+              <option value="normal">normal</option>
+              <option value="low">low</option>
+            </select>
+            <div class="actions">
+              <button type="submit" class="button" data-action="create-success">
+                Save
+              </button>
+              <button type="button" class="button" data-action="create-cancel">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
 
-			<div class="backdrop-edit">
-				<div class="modal-edit">
-					<form class="modal-form">
-						<p class="modal-title">Title:</p>
-						<input type="text" class="modal-input__title" placeholder="Title" />
-						<p class="modal-title">Description:</p>
-						<textarea
-							class="input"
-							rows="5"
-							placeholder="Description"
-						></textarea>
-						<p class="modal-title">Priority:</p>
-						<select class="modal-select">
-							<option value="high">high</option>
-							<option value="normal">normal</option>
-							<option value="low">low</option>
-						</select>
-						<div class="actions">
-							<button type="submit" class="button" data-action="edit-success">
-								Save
-							</button>
-							<button type="button" class="button" data-action="edit-cancel">
-								Cancel
-							</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		<footer class="footer">
-			<div class="footer-container">
-				Murarova Liubov
-			</div>
-		</footer>
-	</body>
+      <div class="backdrop-edit">
+        <div class="modal-edit">
+          <form class="modal-form">
+            <p class="modal-title">Title:</p>
+            <input type="text" class="modal-input__title" placeholder="Title" />
+            <p class="modal-title">Description:</p>
+            <textarea
+              class="input"
+              rows="5"
+              placeholder="Description"
+            ></textarea>
+            <p class="modal-title">Priority:</p>
+            <select class="modal-select">
+              <option value="high">high</option>
+              <option value="normal">normal</option>
+              <option value="low">low</option>
+            </select>
+            <div class="actions">
+              <button type="submit" class="button" data-action="edit-success">
+                Save
+              </button>
+              <button type="button" class="button" data-action="edit-cancel">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer-container">
+        Murarova Liubov
+      </div>
+    </footer>
+  </body>
 </html>
