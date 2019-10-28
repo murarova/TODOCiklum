@@ -8,4 +8,4 @@ fields.
 
 Push "Edit" button for edit all todo-item fields.
 
-Use search form for search todo-item by title, status and priority.
+Use search form to search todo-item by title, status and priority.
