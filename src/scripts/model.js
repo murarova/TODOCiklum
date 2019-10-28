@@ -1,5 +1,5 @@
 import v4 from 'uuid/v4';
-import { LOCALSTORAGE } from './services/localstorage';
+import LOCALSTORAGE from './services/localstorage';
 
 export default class Model {
   constructor(items = []) {
@@ -66,26 +66,22 @@ export default class Model {
     return item;
   }
 
-  // updateItem(id, { title, text, priority }) {
-  // this.items.forEach(item => {
-  //   if (item.id === id) {
-  //     item.text = text;
-  //     item.title = title;
-  //     item.priority = priority;
-  //     item.done;
-  //   }
-  // });
-  // }
+  updateItem(id, note) {
+    const newItem = { ...this.findItem(id), ...note };
+    this.items = this.items.map(item => (item.id === id ? newItem : item));
+  }
 
   removeItem(id) {
     this.items = this.items.filter(item => item.id !== id);
   }
 
-  // updateDoneStatus(id) {
-  //   this.items.forEach(item => {
-  //     if (item.id === id) {
-  //       item.done === 'open' ? (item.done = 'done') : (item.done = 'open');
-  //     }
-  //   });
-  // }
+  updateDoneStatus(id) {
+    const currentItem = this.findItem(id);
+    const newItem =
+      currentItem.done === 'open'
+        ? (currentItem.done = 'done')
+        : (currentItem.done = 'open');
+
+    this.items.forEach(item => (item.id === id ? newItem : item));
+  }
 }

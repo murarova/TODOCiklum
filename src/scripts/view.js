@@ -1,5 +1,7 @@
-import EventEmitter from './services/event-emitter';
+/* eslint-disable class-methods-use-this */
+/* eslint-disable no-alert */
 import debounce from 'debounce';
+import EventEmitter from './services/event-emitter';
 
 export default class View extends EventEmitter {
   constructor() {
@@ -34,11 +36,11 @@ export default class View extends EventEmitter {
       '.modal-edit button[data-action="edit-success"]',
     );
 
-    //EVENT LISTENERS
+    // EVENT LISTENERS
 
     this.page.addEventListener('click', this.toggleDropdown);
 
-    //form listeners
+    // form listeners
 
     this.inputSearch.addEventListener(
       'input',

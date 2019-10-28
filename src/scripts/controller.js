@@ -1,4 +1,4 @@
-import { LOCALSTORAGE } from './services/localstorage';
+import LOCALSTORAGE from './services/localstorage';
 
 export default class Controller {
   constructor(model, view) {

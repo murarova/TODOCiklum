@@ -1,42 +1,44 @@
-export const LOCALSTORAGE = (w => {
-	if (!w) return;
+/* eslint-disable consistent-return */
+/* eslint-disable no-console */
 
-	const isActive = "localStorage" in w;
+export default (w => {
+  if (!w) return;
 
-	const get = key => {
-		try {
-			const serializedState = localStorage.getItem(key);
+  const isActive = 'localStorage' in w;
 
-			return serializedState === null
-				? undefined
-				: JSON.parse(serializedState);
-		} catch (err) {
-			console.error("Get state error: ", err);
-		}
-	};
+  const get = key => {
+    try {
+      const serializedState = localStorage.getItem(key);
 
-	const set = (key, value) => {
-		try {
-			const serializedState = JSON.stringify(value);
-			localStorage.setItem(key, serializedState);
-		} catch (err) {
-			console.error("Set state error: ", err);
-		}
-	};
-	const remove = key => {
-		try {
-			localStorage.removeItem(key);
-		} catch (err) {
-			console.error("Remove state error: ", err);
-		}
-	};
+      return serializedState === null ? undefined : JSON.parse(serializedState);
+    } catch (err) {
+      console.error('Get state error: ', err);
+    }
+  };
 
-	const publicAPI = {
-		isActive,
-		get,
-		set,
-		remove
-	};
+  const set = (key, value) => {
+    try {
+      const serializedState = JSON.stringify(value);
+      localStorage.setItem(key, serializedState);
+    } catch (err) {
+      console.error('Set state error: ', err);
+    }
+  };
 
-	return publicAPI;
+  const remove = key => {
+    try {
+      localStorage.removeItem(key);
+    } catch (err) {
+      console.error('Remove state error: ', err);
+    }
+  };
+
+  const publicAPI = {
+    isActive,
+    get,
+    set,
+    remove,
+  };
+
+  return publicAPI;
 })(window);
